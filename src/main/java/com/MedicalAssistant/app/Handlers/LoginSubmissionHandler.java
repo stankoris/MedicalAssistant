@@ -20,7 +20,7 @@ public class LoginSubmissionHandler implements Handler {
             password = Hashing.sha256().hashString(password, StandardCharsets.UTF_8).toString();
             if(!password.equals(user.getPassword()))
                 throw new InvalidUsernamePasswordException();
-
+            context.sessionAttribute("user", user);
             context.html("You have logged in succesfully!");
 
         }catch (InvalidUsernamePasswordException ex) {
