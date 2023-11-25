@@ -21,7 +21,7 @@ public class LoginSubmissionHandler implements Handler {
             if(!password.equals(user.getPassword()))
                 throw new InvalidUsernamePasswordException();
             context.sessionAttribute("user", user);
-            context.html("You have logged in succesfully!");
+            context.redirect("/test");
 
         }catch (InvalidUsernamePasswordException ex) {
             context.html(ex.getMessage());
