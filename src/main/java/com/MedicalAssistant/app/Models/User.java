@@ -6,6 +6,7 @@ public class User implements Serializable {
     private int user_id;
     private String username;
     private String password;
+    private String user_type;
 
     public User() {}
 
@@ -26,5 +27,11 @@ public class User implements Serializable {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+    public String getUser_type() {
+        return user_type;
+    }
+    public void setUser_type(String user_type) {
+        this.user_type = user_type;
     }
 }

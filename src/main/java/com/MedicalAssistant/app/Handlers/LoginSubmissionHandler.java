@@ -10,6 +10,7 @@ import io.javalin.http.Handler;
 import java.nio.charset.StandardCharsets;
 
 public class LoginSubmissionHandler implements Handler {
+    @Override
     public void handle(Context context) throws Exception {
         String username = context.formParam("username");
         String password = context.formParam("password");
@@ -21,7 +22,9 @@ public class LoginSubmissionHandler implements Handler {
             if(!password.equals(user.getPassword()))
                 throw new InvalidUsernamePasswordException();
             context.sessionAttribute("user", user);
-            context.redirect("/test");
+            if(user.getUser_type().equals("doctor")) context.redirect("/doctor");
+            else if(user.getUser_type().equals("technician")) context.redirect("/technician");
+
 
         }catch (InvalidUsernamePasswordException ex) {
             context.html(ex.getMessage());

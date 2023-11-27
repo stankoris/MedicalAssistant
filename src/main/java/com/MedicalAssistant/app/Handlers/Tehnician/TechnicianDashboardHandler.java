@@ -1,12 +1,12 @@
-package com.MedicalAssistant.app.Handlers;
+package com.MedicalAssistant.app.Handlers.Tehnician;
 
 import com.MedicalAssistant.app.Templating.Renderer;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
 
-public class LoginFormHandler implements Handler {
+public class TechnicianDashboardHandler implements Handler {
     @Override
     public void handle(Context context) throws Exception {
-        context.html(Renderer.render("login.ftl"));
+        context.html(Renderer.render("technician/technician_dashboard.ftl"));
     }
 }

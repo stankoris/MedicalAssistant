@@ -6,6 +6,7 @@ import io.javalin.http.Handler;
 
 
 public class HomeHandler implements Handler {
+    @Override
     public void handle(Context context) throws Exception {
 
         String html_content = Renderer.render("home.ftl");
