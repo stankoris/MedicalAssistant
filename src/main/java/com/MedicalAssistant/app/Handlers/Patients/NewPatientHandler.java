@@ -1,4 +1,4 @@
-package com.MedicalAssistant.app.Handlers.Tehnician;
+package com.MedicalAssistant.app.Handlers.Patients;
 
 import com.MedicalAssistant.app.Database.DAO.PatientDAO;
 import com.MedicalAssistant.app.Models.Patient;

@@ -17,6 +17,16 @@ public class PatientDAO {
                     .list();
         });
     }
+
+    public static ArrayList<Patient> search_name(String first_name) throws FileNotFoundException {
+        Jdbi jdbi = JDBIManager.get();
+        return (ArrayList<Patient>) jdbi.withHandle(handle -> {
+            return handle.createQuery("SELECT * FROM patients WHERE first_name = :first_name;")
+                    .bindBean(first_name)
+                    .mapToBean(Patient.class)
+                    .list();
+        });
+    }
     public static void save(Patient patient) throws FileNotFoundException {
         Jdbi jdbi = JDBIManager.get();
         jdbi.useHandle(handle -> {

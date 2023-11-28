@@ -5,8 +5,8 @@ import com.MedicalAssistant.app.Handlers.Doctor.DoctorDashboardHandler;
 import com.MedicalAssistant.app.Handlers.HomeHandler;
 import com.MedicalAssistant.app.Handlers.LoginFormHandler;
 import com.MedicalAssistant.app.Handlers.LoginSubmissionHandler;
-import com.MedicalAssistant.app.Handlers.Tehnician.NewPatientHandler;
-import com.MedicalAssistant.app.Handlers.Tehnician.PatientHandler;
+import com.MedicalAssistant.app.Handlers.Patients.NewPatientHandler;
+import com.MedicalAssistant.app.Handlers.Patients.AllPatientHandler;
 import com.MedicalAssistant.app.Handlers.Tehnician.TechnicianAuthorizationHandler;
 import com.MedicalAssistant.app.Handlers.Tehnician.TechnicianDashboardHandler;
 import io.javalin.Javalin;
@@ -33,7 +33,9 @@ public class MedAssistApplication {
 		app.get("/technician", new TechnicianDashboardHandler());
 
 		app.post("/technician/new_patient", new NewPatientHandler());
-		app.get("/technician/new_patient", new PatientHandler());
+		app.get("/technician/all_patients", new AllPatientHandler());
+
+
 		app.start(9000);
 	}
 }
