@@ -2,7 +2,7 @@
     "host": "localhost",
     "port": 3306,
     "username": "jadmin",
-    "password": "1234",
+    "password": "123",
     "database": "MedicalAssistant",
     "serverTimezone": "Europe/Belgrade"
 }

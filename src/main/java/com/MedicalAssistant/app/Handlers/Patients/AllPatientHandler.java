@@ -13,6 +13,6 @@ public class AllPatientHandler implements Handler {
         HashMap<String, Object> modelData = new HashMap<>();
 
         modelData.put("patients", PatientDAO.all());
-        context.html(Renderer.render("technician/all_patients.ftl", modelData));
+        context.html(Renderer.render("patients/all_patients.ftl", modelData));
     }
 }

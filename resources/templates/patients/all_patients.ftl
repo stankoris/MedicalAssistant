@@ -16,8 +16,10 @@
                 <th>First name</th>
                 <th>Last name</th>
                 <th>Date of birth</th>
+                <th>Address</th>
                 <th>Email</th>
                 <th>Jmbg</th>
+                <th>Phone number</th>
             </tr>
         </thead>
         <tbody>
@@ -26,8 +28,17 @@
                     <td>${patient.first_name}</td>
                     <td>${patient.last_name}</td>
                     <td>${patient.date_of_birth}</td>
-                    <td>${patient.email}</td>
+                    <td>${patient.address}</td>
+                    <td>
+                         <#if patient.email??>
+                                ${patient.email}
+                            <#else>
+                                N/A
+                            </#if>
+                    </td>
                     <td>${patient.jmbg}</td>
+                    <td>${patient.phone_number}</td>
+                    
                 </tr>
             </#list>
         </tbody>

@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
-public class ConnectionString {
+public class    ConnectionString {
     public static String create() throws FileNotFoundException {
         Gson gson = new Gson();
         String settings_path = System.getenv("MA_RESOURCES") + "/configuration/database.json";

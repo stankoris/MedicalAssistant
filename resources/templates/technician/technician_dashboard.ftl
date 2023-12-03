@@ -28,12 +28,20 @@
                 <input type="date" name="date_of_birth" min="1900-01-01" max="2023-11-27">
             </div>
             <div>
+                <label>Address</label>
+                <input type="text" name="address">
+            </div>
+            <div>
                 <label>E-mail</label>
                 <input type="email" name="email">
             </div>
             <div>
                 <label>Jmbg</label>
                 <input type="text" name="jmbg" oninput="validateNumber(this)" maxlength="13">
+            </div>
+            <div>
+                <label>Phone number</label>
+                <input type="number" name="phone_number">
             </div>
             <div>
                 <button type="submit">Save</button>

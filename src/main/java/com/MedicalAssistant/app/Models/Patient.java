@@ -10,8 +10,10 @@ public class Patient implements Serializable {
     private String first_name;
     private String last_name;
     private LocalDate date_of_birth;
+    private String address;
     private String email;
     private String jmbg;
+    private String phone_number;
 
     public Patient() {}
 
@@ -32,11 +34,17 @@ public class Patient implements Serializable {
                 this.date_of_birth = (LocalDate) patient_data.get("date_of_birth");
             }
         }
+        if(patient_data.containsKey("address")) {
+            this.address = (String) patient_data.get("address");
+        }
         if(patient_data.containsKey("email")) {
             this.email = (String) patient_data.get("email");
         }
         if(patient_data.containsKey("jmbg")) {
             this.jmbg = (String) patient_data.get("jmbg");
+        }
+        if(patient_data.containsKey("phone_number")) {
+            this.phone_number = (String) patient_data.get("phone_number");
         }
 
     }
@@ -72,6 +80,14 @@ public class Patient implements Serializable {
         this.date_of_birth = date_of_birth;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -86,5 +102,13 @@ public class Patient implements Serializable {
 
     public void setJmbg(String jmbg) {
         this.jmbg = jmbg;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 }
