@@ -36,6 +36,7 @@ public class MedAssistApplication {
 		app.get("/technician/all_patients", new AllPatientHandler());
 
 
+
 		app.start(9000);
 	}
 }

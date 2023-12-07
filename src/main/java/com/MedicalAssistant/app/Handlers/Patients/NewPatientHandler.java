@@ -34,9 +34,15 @@ public class NewPatientHandler implements Handler {
 
         Patient patient = new Patient(patient_data);
         try {
-            PatientDAO.save(patient);
+            int affected = PatientDAO.save(patient);
+
+            if(affected > 0) {
+                context.redirect("/technician?savePatient=true");
+                return;
+            }
         }catch(Exception ex) {
             ex.printStackTrace();
         }
+        context.redirect("/technician?savePatient=false");
     }
 }

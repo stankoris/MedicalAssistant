@@ -6,6 +6,7 @@ import org.jdbi.v3.core.Jdbi;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public class PatientDAO {
 
@@ -17,11 +18,10 @@ public class PatientDAO {
                     .list();
         });
     }
-
-    public static void save(Patient patient) throws FileNotFoundException {
+    public static int save(Patient patient) throws FileNotFoundException {
         Jdbi jdbi = JDBIManager.get();
-        jdbi.useHandle(handle -> {
-            handle.createUpdate("INSERT INTO patients VALUES (NULL, :first_name, :last_name, :date_of_birth, :address, :email, :jmbg, :phone_number);")
+        return jdbi.withHandle(handle -> {
+            return handle.createUpdate("INSERT INTO patients VALUES (NULL, :first_name, :last_name, :date_of_birth, :address, :email, :jmbg, :phone_number);")
                     .bindBean(patient).execute();
         });
     }
