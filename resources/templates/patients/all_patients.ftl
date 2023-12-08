@@ -13,8 +13,7 @@
     <table>
         <thead>
             <tr>
-                <th>First name</th>
-                <th>Last name</th>
+                <th>Full name</th>
                 <th>Date of birth</th>
                 <th>Address</th>
                 <th>Email</th>
@@ -25,8 +24,7 @@
         <tbody>
             <#list patients as patient>
                 <tr class="patient">
-                    <td>${patient.first_name}</td>
-                    <td>${patient.last_name}</td>
+                    <td> <a class="full_name" href="/technician/edit/${patient.patient_id}">${patient.full_name()}</a></td>
                     <td>${patient.date_of_birth}</td>
                     <td>${patient.address}</td>
                     <td>

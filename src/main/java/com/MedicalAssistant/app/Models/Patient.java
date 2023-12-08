@@ -111,4 +111,8 @@ public class Patient implements Serializable {
     public void setPhone_number(String phone_number) {
         this.phone_number = phone_number;
     }
+
+    public String full_name() {
+        return String.format("%s %s",this.first_name, this.last_name);
+    }
 }

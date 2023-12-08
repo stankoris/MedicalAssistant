@@ -30,7 +30,7 @@
 
     <header>
         <a href="/technician/all_patients">All patients</a>
-        <a href="/technician/one_patients">Find patient</a>
+        <a href="/technician/find_patients">Find patient</a>
     </header>
 
     <main>
