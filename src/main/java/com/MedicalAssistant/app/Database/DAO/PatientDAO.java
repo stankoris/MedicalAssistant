@@ -40,4 +40,23 @@ public class PatientDAO {
                     .one();
         });
     }
+
+    public static void update(Patient patient) throws FileNotFoundException {
+        Jdbi jdbi = JDBIManager.get();
+        jdbi.useHandle(handle -> {
+            handle.createUpdate("""
+                            UPDATE patients SET
+                            first_name = :first_name,
+                            last_name = :last_name,
+                            date_of_birth = :date_of_birth,
+                            address = :address,
+                            email = :email,
+                            jmbg = :jmbg,
+                            phone_number = :phone_number
+                            WHERE patient_id = :patient_id;
+                            """)
+                    .bindBean(patient)
+                    .execute();
+        });
+    }
 }

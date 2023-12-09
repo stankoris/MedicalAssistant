@@ -12,12 +12,18 @@ public class EditPatientHandler implements Handler {
     @Override
     public void handle(Context context) throws Exception {
             String patient_id = context.pathParam("patient_id");
-            int patientId = Integer.parseInt(patient_id);
-
-            Patient patient = PatientDAO.get(patientId);
+            Patient patient = PatientDAO.get(Integer.parseInt(patient_id));
 
             HashMap<String, Object> modelData = new HashMap<>();
             modelData.put("patient", patient);
-            context.html(Renderer.render("patients/edit_patient.ftl", modelData));
+
+
+        if(context.queryParam("updatePatient") != null) {
+            modelData.put("updatePatient", context.queryParam("updatePatient"));
+        }
+
+        modelData.put("patients", PatientDAO.all());
+
+        context.html(Renderer.render("patients/edit_patient.ftl", modelData));
     }
 }

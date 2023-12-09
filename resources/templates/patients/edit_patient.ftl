@@ -4,13 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit patient</title>
+    <link rel="stylesheet" href="/edit_patient.css">
 </head>
 <body>
+<div class="container">
+    <#if updatePatient?has_content>
+        <#if updatePatient == "true">
+            <div class="success_modal">
+                Patient has been updated! 
+                <button class="close_button"
+                onclick="this.parentElement.remove()">&times;</button>
+            </div>
+        <#else>
+            <div class="error_modal">
+                There was an error updating patient!
+                <button class="close_button"
+                onclick="this.parentElement.remove()">&times;</button>
+            </div>
+        </#if>
+    </#if>
+</div>
+
     <form id="new_patient_form" action="/technician/edit/${patient.patient_id}" method="post" enctype="multipart/form-data">
         <div>
             <label>First name</label>
-            <input type="text" name="full_name" value="${patient.first_name}" />
+            <input type="text" name="first_name" value="${patient.first_name}" />
         </div>
         <div>
             <label>Last name</label>

@@ -1,0 +1,42 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success_modal {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    padding: 1rem;
+    background-color: rgb(43, 255, 0);
+    border: black 1px solid;
+    border-radius: 10px;
+}
+
+.error_modal {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    padding: 1rem;
+    background-color: rgb(255, 0, 0);
+    border: black 1px solid;
+    border-radius: 10px;
+}
+
+.close_button { 
+    background: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.close_button:hover {
+    background-color: rgb(255, 255, 255);
+}

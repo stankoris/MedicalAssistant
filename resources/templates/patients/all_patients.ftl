@@ -26,17 +26,28 @@
                 <tr class="patient">
                     <td> <a class="full_name" href="/technician/edit/${patient.patient_id}">${patient.full_name()}</a></td>
                     <td>${patient.date_of_birth}</td>
-                    <td>${patient.address}</td>
                     <td>
-                         <#if patient.email??>
-                                ${patient.email}
-                            <#else>
-                                N/A
-                            </#if>
+                        <#if patient.address??>
+                            ${patient.address}
+                        <#else>
+                            N/A
+                        </#if>
+                    </td>
+                    <td>
+                        <#if patient.email??>
+                            ${patient.email}
+                        <#else>
+                            N/A
+                        </#if>
                     </td>
                     <td>${patient.jmbg}</td>
-                    <td>${patient.phone_number}</td>
-                    
+                    <td>
+                    <#if patient.phone_number??>
+                            ${patient.phone_number}
+                        <#else>
+                            N/A
+                        </#if>
+                    </td>
                 </tr>
             </#list>
         </tbody>

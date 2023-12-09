@@ -9,7 +9,6 @@ public class HomeHandler implements Handler {
     @Override
     public void handle(Context context) throws Exception {
 
-        String html_content = Renderer.render("home.ftl");
-        context.html(html_content);
+        context.redirect("/login");
     }
 }
