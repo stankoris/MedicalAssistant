@@ -11,20 +11,22 @@
     <link rel="stylesheet" href="/loginstyle.css">
 </head>
 <body>
-    <div class="container" style="background-color: #e7d7c1;">
+
+<div class="container">
         <form action="/login" method="post">
             <div class="mb-3">
-                <label class="form-label">Username</label>
-                <input type="text" name="username" class="form-control" />
+                
+                <input type="text" name="username" class="form-control" placeholder="Username" />
             </div>
             <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" />
+    
+                <input type="password" name="password" class="form-control" placeholder="Password" />
             </div>
             <div class="mb-3">
                 <button class="btn btn-primary" type="submit">Login</button>
             </div>
         </form>
-    </div>
+</div>
+    
 </body>
 </html>

@@ -36,7 +36,7 @@ public class MedAssistApplication {
 
 		app.get("/technician/all_patients", new AllPatientHandler());
 
-		app.get("/technician/find_patients", new FindPatientsHandler());
+		app.get("/technician/find_patient", new FindPatientsHandler());
 
 		app.post("/technician/edit/{patient_id}", new EditPatientSubmitHandler());
 		app.get("/technician/edit/{patient_id}", new EditPatientHandler());

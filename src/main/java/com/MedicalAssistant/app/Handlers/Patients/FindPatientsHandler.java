@@ -7,6 +7,6 @@ import io.javalin.http.Handler;
 public class FindPatientsHandler implements Handler {
     @Override
     public void handle(Context context) throws Exception {
-        context.html(Renderer.render("patients/find_patients.ftl"));
+        context.html(Renderer.render("patients/find_patient.ftl"));
     }
 }
