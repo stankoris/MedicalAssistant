@@ -24,7 +24,7 @@
         <div class="container">
     <table>
         <thead>
-            <tr>
+            <tr class="tabela">
                 <th>Full name</th>
                 <th>Date of birth</th>
                 <th>Address</th>

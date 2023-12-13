@@ -5,6 +5,7 @@ import com.MedicalAssistant.app.Models.Patient;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class NewPatientSubmitHandler implements Handler {
@@ -18,7 +19,6 @@ public class NewPatientSubmitHandler implements Handler {
         String jmbg = context.formParam("jmbg");
         String phone_number = context.formParam("phone_number");
 
-
         HashMap<String, Object> patient_data = new HashMap<>();
 
         if(first_name != null && !first_name.equals("")) patient_data.put("first_name", first_name);
@@ -30,12 +30,23 @@ public class NewPatientSubmitHandler implements Handler {
         if(phone_number != null && !phone_number.equals("")) patient_data.put("phone_number", phone_number);
 
         Patient patient = new Patient(patient_data);
+        ArrayList<Patient> patients = PatientDAO.all();
+
         try {
+            for(Patient p : patients) {
+
+                if(p.getJmbg().equals(jmbg))  {
+                    context.redirect("/technician/new_patient?jmbg=true");
+                    return;
+                }
+            }
+
             int affected = PatientDAO.save(patient);
             if(affected > 0) {
                 context.redirect("/technician/new_patient?savePatient=true");
                 return;
             }
+
         }catch(Exception ex) {
             ex.printStackTrace();
         }

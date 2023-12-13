@@ -109,104 +109,65 @@ input {
   color: white;
   font-size: large;
 }
-
-
-/*------------------------------------------------------------------------------------------------*/
-
-
-.success_modal {
-    display: flex;
-    justify-content: space-between;
-    width: 20%;
-    padding: 1rem;
-    background-color: rgb(43, 255, 0);
-    border: black 1px solid;
-    border-radius: 10px;
+h1 a {
+  margin: 30px;
+  font-family: fantasy;
+  text-decoration: none;
+  letter-spacing:2px;
+  font-size: larger;
+  color: black;
 }
 
-.error_modal {
-    display: flex;
-    justify-content: space-between;
-    width: 20%;
-    padding: 1rem;
-    background-color: rgb(255, 0, 0);
-    border: black 1px solid;
-    border-radius: 10px;
+.container {
+  display: flex;
 }
 
-.close_button { 
-    background: none;
-    font-size: 1rem;
-    font-weight: bold;
-    border: 2px solid black;
-    border-radius: 10px;
-    cursor: pointer;
+#showOptionsBtn {
+  position: absolute;
+  right: 10px;
+  top: 17px;
+  cursor: pointer;
+  padding: 10px 20px; 
+  border: none;
+  background-color: #333; 
+  color: #fff; 
+  border-radius: 5px;
+  float: right;
 }
-.close_button:hover {
-    background-color: rgb(255, 255, 255);
+
+/* Stilizovanje kontejnera za opcije */
+.options-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  width: 16rem;
+  position: absolute;
+  right: 5px;
+  top: 50px;
+  border: 1px solid #ccc;
+  background-color: #000000;
+  border-radius: 20px 0 20px 20px;
+  transition: transform 0.5s ease-in-out;
+  transform-origin: top right;
+  transform: scaleY(0);
+  transform-origin: top right;
+  opacity: 0;
+  pointer-events: none;
 }
 
-/*-------------------------------------------------------------------------------------------------*/
+.options-container.show {
+  transform: scaleY(1);
+  opacity: 1;
+  pointer-events: auto;
+}
 
-  h1 a {
-    margin: 30px;
-    font-family: fantasy;
-    text-decoration: none;
-    letter-spacing:2px;
-    font-size: larger;
-    color: black;
-  }
-
-  .container {
-    display: flex;
-  }
-  
-  #showOptionsBtn {
-    position: absolute;
-    right: 10px;
-    top: 17px;
-    cursor: pointer;
-    padding: 10px 20px; 
-    border: none;
-    background-color: #333; 
-    color: #fff; 
-    border-radius: 5px;
-    float: right;
-  }
-  
-  /* Stilizovanje kontejnera za opcije */
-  .options-container {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    width: 16rem;
-    position: absolute;
-    right: 5px;
-    top: 50px;
-    border: 1px solid #ccc;
-    background-color: #000000;
-    border-radius: 20px 0 20px 20px;
-    transition: transform 0.5s ease-in-out;
-    transform-origin: top right;
-    transform: scaleY(0);
-    transform-origin: top right;
-    opacity: 0;
-    pointer-events: none;
-  }
-  
-  .options-container.show {
-    transform: scaleY(1);
-    opacity: 1;
-    pointer-events: auto;
-  }
-  
-  /* Stilizovanje opcija */
-  .options-container a {
-    margin: 5px;
-    color: #fff;
-    text-decoration: none;
-    font-size: large;
-  }
+/* Stilizovanje opcija */
+.options-container a {
+  margin: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: large;
+}
 
   
 

@@ -64,6 +64,11 @@ tr:nth-child(even) {
     background-color: rgb(195, 246, 255);
 }
 
+.tabela {
+  background-color: #000000;
+  color: white;
+}
+
 /* Stilizacija redova s klasom 'patient' */
 .patient {
     border: 1px dotted black;

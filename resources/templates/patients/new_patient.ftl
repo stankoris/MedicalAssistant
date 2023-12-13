@@ -9,6 +9,27 @@
     <link rel="stylesheet" href="/new_patient.css">
 </head>
 <body>
+
+    <#if savePatient?has_content>
+        <script>
+            <#if savePatient == "true">
+                alert("Patient has been saved!");
+                window.location.href = "/technician";
+            <#else>
+                alert("There was an error saving patient!");
+            </#if>
+        </script>
+    </#if>
+
+    <#if jmbg?has_content>
+        <script>
+            <#if jmbg == "true">
+                alert("There is already a patient with that JMBG! Please enter a new JMBG!");
+                window.history.back();
+            </#if>
+        </script>
+    </#if>
+
 <header>
     <h1><a href="/technician">MedicalAssistant</a></h1>
 
@@ -22,23 +43,6 @@
     </div>
     </header>
 
-<div class="container">
-    <#if savePatient?has_content>
-        <#if savePatient == "true">
-            <div class="success_modal">
-                Patient has been saved! 
-                <button class="close_button"
-                onclick="this.parentElement.remove()">&times;</button>
-            </div>
-        <#else>
-            <div class="error_modal">
-                There was an error saving patient!
-                <button class="close_button"
-                onclick="this.parentElement.remove()">&times;</button>
-            </div>
-        </#if>
-    </#if>
-</div>
 <main>
     <form action="/technician/new_patient" method="post" enctype="multypart/form-data">
         <div class="name-section">
@@ -84,7 +88,6 @@
     </form>
 </main>
 
-
     <script>
         function validateNumber(input) {
         input.value = input.value.replace(/[^0-9]/g, '');
@@ -103,5 +106,6 @@
         }
     });
     </script>
+    
 </body>
 </html>

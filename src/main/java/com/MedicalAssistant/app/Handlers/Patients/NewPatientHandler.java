@@ -10,10 +10,15 @@ import java.util.HashMap;
 public class NewPatientHandler implements Handler {
     @Override
     public void handle(Context context) throws Exception {
+
         HashMap<String, Object> dataModel = new HashMap<>();
 
         if(context.queryParam("savePatient") != null) {
             dataModel.put("savePatient", context.queryParam("savePatient"));
+        }
+
+        if(context.queryParam("jmbg") != null) {
+            dataModel.put("jmbg", context.queryParam("jmbg"));
         }
 
         dataModel.put("patients", PatientDAO.all());
