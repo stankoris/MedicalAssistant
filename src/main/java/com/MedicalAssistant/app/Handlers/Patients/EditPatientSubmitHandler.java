@@ -33,6 +33,7 @@ public class EditPatientSubmitHandler implements Handler {
         if (email.equals("")) patient.setEmail(null);
         if (phone_number.equals("")) patient.setPhone_number(null);
 
+
         try{
             PatientDAO.update(patient);
             context.redirect(String.format("/technician/edit/%d?updatePatient=true",patientId));

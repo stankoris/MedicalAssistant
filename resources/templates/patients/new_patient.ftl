@@ -13,7 +13,7 @@
     <#if savePatient?has_content>
         <script>
             <#if savePatient == "true">
-                alert("Patient has been saved!");
+                alert("Patient has been saved successfully!");
                 window.location.href = "/technician";
             <#else>
                 alert("There was an error saving patient!");
@@ -45,42 +45,40 @@
 
 <main>
     <form action="/technician/new_patient" method="post" enctype="multypart/form-data">
-        <div class="name-section">
-            <div class="first-and-last-name">
-                <div>
-                    <label>First name</label>
-                    <input type="text" name="first_name"> 
-                </div>
-                <div>
-                    <label>Last name</label>
-                    <input type="text" name="last_name">
-                </div>
-            </div>
+        <div>
+            <label>First name</label>
+            <input type="text" name="first_name" oninput="capitalizeFirstLetter(this)"> 
         </div>
-        <div class="date_of_birth">
-                <label>Date of birth</label>
-                <input type="date" name="date_of_birth" min="1900-01-01" max="2023-11-27">
-            </div>
-        <div class="address-section">
-            <div class="address_and_mail">
-                <div class="address">
-                    <label>Address</label>
-                    <input type="text" name="address">
-                </div>
-                <div>
-                    <label>E-mail</label>
-                    <input type="email" name="email">
-                </div>
-            </div>
+
+        <div>
+            <label>Last name</label>
+            <input type="text" name="last_name" oninput="capitalizeFirstLetter(this)">
         </div>
-            <div class="jmbg">
-                <label>Jmbg</label>
-                <input type="text" name="jmbg" oninput="validateNumber(this)" maxlength="13">
-            </div>
-            <div class="phone_number"> 
-                <label>Phone number</label>
-                <input type="number" name="phone_number">
-            </div>
+
+        <div>
+            <label>Date of birth</label>
+            <input type="date" name="date_of_birth" min="1900-01-01" max="2023-11-27">
+        </div>
+
+        <div>
+            <label>Address</label>
+            <input type="text" name="address">
+        </div>
+            
+        <div>
+            <label>E-mail</label>
+            <input type="email" name="email">
+        </div>
+
+        <div>
+            <label>Jmbg</label>
+            <input type="text" name="jmbg" oninput="validateNumber(this)" maxlength="13">
+        </div>
+            
+        <div> 
+            <label>Phone number</label>
+            <input type="number" name="phone_number">
+        </div>
 
         <div class="btn">
             <button type="submit">Save</button>
@@ -89,6 +87,7 @@
 </main>
 
     <script>
+
         function validateNumber(input) {
         input.value = input.value.replace(/[^0-9]/g, '');
             if (input.value.length > 13) {
@@ -105,7 +104,12 @@
         optionsContainer.classList.add('show');
         }
     });
+
+    function capitalizeFirstLetter(input) {
+            input.value = input.value.charAt(0).toUpperCase() + input.value.slice(1);
+        }
+
     </script>
-    
+
 </body>
 </html>

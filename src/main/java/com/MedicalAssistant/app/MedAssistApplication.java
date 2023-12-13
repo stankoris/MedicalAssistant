@@ -41,6 +41,8 @@ public class MedAssistApplication {
 		app.post("/technician/edit/{patient_id}", new EditPatientSubmitHandler());
 		app.get("/technician/edit/{patient_id}", new EditPatientHandler());
 
+		app.get("/technician/delete/{patient_id}", new DeletePatientHandler());
+
 		app.start(9000);
 	}
 }

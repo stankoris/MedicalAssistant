@@ -22,7 +22,7 @@ main {
   display: flex;
   justify-content: center;
   border-top: none;
-  height: 600px;
+  height: auto;
   border-radius: 0px 0px 20px 20px;
 }
 
@@ -35,80 +35,6 @@ header {
   border-bottom: none;
 }
 
-form {
-    display: grid;
-    gap: 10px;
-    width: 90%;
-    margin-top: 2%;
-}
-
-.name-section {
-    display: grid;
-    gap: 10px;
-}
-
-.name-section input {
-  text-transform: capitalize;
-}
-
-.first-and-last-name {
-    display: grid;
-    gap: 50px;
-    grid-template-columns: 1fr 1fr;
-}
-
-.date_of_birth {
-  width: 25%;
-}
-
-.address-section {
-  display: grid;
-    gap: 10px;
-    width: 90%;
-    
-}
-
-.address_and_mail {
-  display: grid;
-    gap: 50px;
-    grid-template-columns: 1fr 2fr;
-}
-
-.jmbg, .phone_number {
-  width: 30%;
-}
-
-.address input{
-  text-transform: capitalize;
-}
-
-label {
-  font-size: larger;
-    font-weight: bold;
-}
-
-input {
-  height: 40px;
-    width: 100%;
-    padding: 5px;
-    box-sizing: border-box;
-    font-size: larger;
-}
-
-.btn {
-  display: flex;
-  justify-content: end;
-}
-
-.btn button {
-  width: 12%;
-  height: 40px;
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: #000000;
-  color: white;
-  font-size: large;
-}
 h1 a {
   margin: 30px;
   font-family: fantasy;
@@ -169,6 +95,46 @@ h1 a {
   font-size: large;
 }
 
-  
+form {
+  background-color: #ffffff09;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  font-size: larger;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
 
-  
+div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: larger;
+}
+
+.btn button {
+  background-color: #4c56af;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 15%;
+}
+
+button:hover {
+  background-color: #6d7cff;
+}

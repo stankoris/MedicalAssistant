@@ -22,6 +22,10 @@ public class EditPatientHandler implements Handler {
             modelData.put("updatePatient", context.queryParam("updatePatient"));
         }
 
+        if(context.queryParam("deletePatient") != null) {
+            modelData.put("deletePatient", context.queryParam("deletePatient"));
+        }
+
         modelData.put("patients", PatientDAO.all());
 
         context.html(Renderer.render("patients/edit_patient.ftl", modelData));

@@ -40,7 +40,14 @@ public class PatientDAO {
                     .one();
         });
     }
-
+    public static void delete(int patient_id) throws FileNotFoundException {
+        Jdbi jdbi = JDBIManager.get();
+        jdbi.useHandle(handle -> {
+            handle.createUpdate("DELETE FROM patients WHERE patient_id = :patient_id")
+                    .bind("patient_id", patient_id)
+                    .execute();
+        });
+    }
     public static void update(Patient patient) throws FileNotFoundException {
         Jdbi jdbi = JDBIManager.get();
         jdbi.useHandle(handle -> {
