@@ -37,7 +37,6 @@ border-bottom: none;
 
 h1 a {
   margin: 30px;
-  font-family: fantasy;
   text-decoration: none;
   letter-spacing:2px;
   font-size: larger;
@@ -95,9 +94,6 @@ h1 a {
   font-size: large;
 }
 
-
-
-
 form {
   background-color: #ffffff09;
   padding: 20px;
@@ -148,8 +144,6 @@ input {
 button:hover {
   background-color: #6d7cff;
 }
-
-
 
 
 #patient_delete_modal {

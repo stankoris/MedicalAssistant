@@ -1,5 +1,6 @@
 package com.MedicalAssistant.app.Handlers.Tehnician;
 
+import com.MedicalAssistant.app.Database.DAO.DoctorDAO;
 import com.MedicalAssistant.app.Database.DAO.PatientDAO;
 import com.MedicalAssistant.app.Templating.Renderer;
 import io.javalin.http.Context;
@@ -10,17 +11,12 @@ import java.util.HashMap;
 public class TechnicianDashboardHandler implements Handler {
     @Override
     public void handle(Context context) throws Exception {
+
         HashMap<String, Object> dataModel = new HashMap<>();
 
-        if(context.queryParam("savePatient") != null) {
-            dataModel.put("savePatient", context.queryParam("savePatient"));
-        }
-
-        if(context.queryParam("updatePatient") != null) {
-            dataModel.put("updatePatient", context.queryParam("updatePatient"));
-        }
-
         dataModel.put("patients", PatientDAO.all());
+
+        dataModel.put("doctors", DoctorDAO.all());
 
         context.html(Renderer.render("technician/technician_dashboard.ftl", dataModel));
     }
