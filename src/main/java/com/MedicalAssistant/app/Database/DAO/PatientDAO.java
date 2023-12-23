@@ -29,7 +29,6 @@ public class PatientDAO {
                    .mapToBean(Patient.class)
                    .one().getPatient_id();
         });
-
     }
     public static Patient get(int patient_id) throws FileNotFoundException {
         Jdbi jdbi = JDBIManager.get();
@@ -64,6 +63,16 @@ public class PatientDAO {
                             """)
                     .bindBean(patient)
                     .execute();
+        });
+    }
+
+    public static ArrayList<Patient> find(String first_name) throws FileNotFoundException {
+        Jdbi jdbi = JDBIManager.get();
+        return (ArrayList<Patient>) jdbi.withHandle(handle -> {
+            return handle.createQuery("SELECT * FROM patients WHERE first_name = :first_name;")
+                    .bind("first_name", first_name)
+                    .mapToBean(Patient.class)
+                    .list();
         });
     }
 }

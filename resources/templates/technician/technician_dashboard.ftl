@@ -33,7 +33,7 @@
       <button id="showOptionsBtn" ><i class="fa-solid fa-bars"></i></button>
         <div class="options-container" id="optionsContainer">
             <a href="/technician/all_patients">All patients</a>
-            <a href="/technician/find_patients">Find patient</a>
+            <a href="/technician/find_patient">Find patient</a>
             <a href="/technician/new_patient">New patient</a>
         </div>
     </div>
@@ -41,107 +41,16 @@
   
   <div  class="main_div">
 
-    <div class="main_aside">
-      <table>
-        <tr>
-          <td></td>
-        </tr>
-        <tr>
-          <td>07:00</td>
-        </tr>
-        <tr>
-          <td>08:00</td>
-        </tr>
-        <tr>
-          <td>09:00</td>
-        </tr>
-        <tr>
-          <td>10:00</td>
-        </tr>
-        <tr>
-          <td>11:00</td>
-        </tr>
-        <tr>
-          <td>12:00</td>
-        </tr>
-        <tr>
-          <td>13:00</td>
-        </tr>
-        <tr>
-          <td>14:00</td>
-        </tr>
-        <tr>
-          <td>15:00</td>
-        </tr>
-        <tr>
-          <td>16:00</td>
-        </tr>
-        <tr>
-          <td>17:00</td>
-        </tr>
-        <tr>
-          <td>18:00</td>
-        </tr>
-        <tr>
-          <td>19:00</td>
-        </tr>
-        <tr>
-          <td>20:00</td>
-        </tr>
-      </table>
-    </div>
-
     <div class="main_div_container">
-       <table>
-        <tr>
-          <td>
-            <#list doctors as doctor>
-              ${doctor.full_name()}
+      <table>
+          <tr>
+            <#list appointments as appointment>
+              <td>
+                <button>${appointment.date_time}</button>
+              </td>
             </#list>
-          </td>
-        </tr>
-        <tr>
-          <td>07:00</td>
-        </tr>
-        <tr>
-          <td>08:00</td>
-        </tr>
-        <tr>
-          <td>09:00</td>
-        </tr>
-        <tr>
-          <td>10:00</td>
-        </tr>
-        <tr>
-          <td>11:00</td>
-        </tr>
-        <tr>
-          <td>12:00</td>
-        </tr>
-        <tr>
-          <td>13:00</td>
-        </tr>
-        <tr>
-          <td>14:00</td>
-        </tr>
-        <tr>
-          <td>15:00</td>
-        </tr>
-        <tr>
-          <td>16:00</td>
-        </tr>
-        <tr>
-          <td>17:00</td>
-        </tr>
-        <tr>
-          <td>18:00</td>
-        </tr>
-        <tr>
-          <td>19:00</td>
-        </tr>
-        <tr>
-          <td>20:00</td>
-        </tr>
+          </tr>
+        <label for="">datum</label>
       </table>
     </div>
   </div>

@@ -2,7 +2,6 @@ package com.MedicalAssistant.app.Database.DAO;
 
 import com.MedicalAssistant.app.Database.Connection.JDBIManager;
 import com.MedicalAssistant.app.Models.Doctor;
-import com.MedicalAssistant.app.Models.Patient;
 import org.jdbi.v3.core.Jdbi;
 
 import java.io.FileNotFoundException;

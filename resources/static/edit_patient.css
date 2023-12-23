@@ -167,6 +167,10 @@ button:hover {
   color: #212121;
 }
 
+#patient_delete_modal a:hover {
+  background-color: #4c56af;
+}
+
 
 
 

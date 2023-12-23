@@ -37,7 +37,7 @@
         <button id="showOptionsBtn" ><i class="fa-solid fa-bars"></i></button>
         <div class="options-container" id="optionsContainer">
             <a href="/technician/all_patients">All patients</a>
-            <a href="/technician/find_patients">Find patient</a>
+            <a href="/technician/find_patient">Find patient</a>
             <a href="/technician/new_patient">New patient</a>
         </div>
     </div>
