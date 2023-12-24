@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="" method="post" enctype="multipart/form-data">
+<form action="/technician" method="post" enctype="multipart/form-data">
 
     <label for="patient_id">Insert patient id</label>
     <select id="patient_id" name="patient_id">
@@ -18,7 +18,7 @@
             </option>
         </#list>
     </select>
-    <input id="patient_id_input" type="number">
+    
 
     <label for="doctor_id">Insert doctor id</label>
     <select id="doctor_id" name="doctor_id">
@@ -28,7 +28,7 @@
             </option>
         </#list>
     </select>
-    <input id="doctor_id_input" type="number">
+    
 
     <input type="datetime-local" name="date_time">
 
@@ -37,21 +37,46 @@
 </form>
 
 <script>
-    var patient_id = document.getElementById("patient_id");
+
+var patient_id = document.getElementById("patient_id");
     var patient_id_input = document.getElementById("patient_id_input");
 
     var doctor_id = document.getElementById("doctor_id");
     var doctor_id_input = document.getElementById("doctor_id_input");
 
-    // Dodajte "change" događaj slušaoca za <select> patient_id
     patient_id.addEventListener("change", function() {
         patient_id_input.value = patient_id.value;
     });
 
-    // Dodajte "change" događaj slušaoca za <select> doctor_id
     doctor_id.addEventListener("change", function() {
         doctor_id_input.value = doctor_id.value;
     });
+
+    document.getElementById("btn").addEventListener("click", function(event) {
+        event.preventDefault(); 
+        var data = {
+            patient_id: patient_id.value,
+            doctor_id: doctor_id.value,
+            date_time: document.querySelector('input[type="datetime-local"]').value
+        };
+
+        fetch('/technician/new_appointment', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+           window.location.href = "/technician";
+        })
+        .catch((error) => {
+            window.location.href = "/technician";
+        });
+    });
+
+
 </script>
 
 </body>
