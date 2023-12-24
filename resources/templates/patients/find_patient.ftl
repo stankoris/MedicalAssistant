@@ -81,6 +81,24 @@
         window.location.href = '/technician/find_patient?first_name=' + searchInput;
     });
 
+
+
+    function getPatients() {
+    fetch("/technician/new_appointment")
+        .then(response => response.json())
+        .then(data => {
+            // Popunjavanje opcija u select elementu za pacijente
+            var selectPatients = document.getElementById("patient_id");
+            data.forEach(patient => {
+                var option = document.createElement("option");
+                option.value = patient.id;
+                option.text = patient.name;
+                selectPatients.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
+
   </script>
 </body>
 </html>

@@ -3,9 +3,11 @@ package com.MedicalAssistant.app.Database.DAO;
 
 import com.MedicalAssistant.app.Database.Connection.JDBIManager;
 import com.MedicalAssistant.app.Models.Appointments;
+import com.MedicalAssistant.app.Models.Patient;
 import org.jdbi.v3.core.Jdbi;
 
 import java.io.FileNotFoundException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class AppointmentsDAO {
@@ -19,17 +21,14 @@ public class AppointmentsDAO {
         });
     }
 
-    public static int add(Appointments appointment) throws FileNotFoundException {
+    public static int add(int p, int d, LocalDateTime t) throws FileNotFoundException {
         Jdbi jdbi = JDBIManager.get();
-        jdbi.useHandle(handle -> {
-            handle.createUpdate("INSERT INTO `appointments` VALUES (NULL, :patient_id, :doctor_id, :date_time)")
-                    .bindBean(appointment)
-                    .execute();
-        });
         return jdbi.withHandle(handle -> {
-            return handle.createQuery("SELECT * FROM appointments ORDER BY appointment_id DESC LIMIT 1")
-                    .mapToBean(Appointments.class)
-                    .one().getAppointment_id();
+            return handle.createUpdate("INSERT INTO `appointments` VALUES (NULL, ?, ?, ?)")
+                    .bind(0, p)
+                    .bind(1,d)
+                    .bind(2,t)
+                    .execute();
         });
     }
 }

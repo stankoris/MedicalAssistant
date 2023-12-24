@@ -9,19 +9,14 @@
     <link rel="stylesheet" href="/technician_dashboard.css">
 
 
-<#--  -----------------------------------------------------------------------------------------------------------------------  -->
 
-
-
+<#--  --------------------------------------LINKOVI ZA KALENDAR-------------------------------------------------------------------------------  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
-
-
-
   <#--  -----------------------------------------------------------------------------------------------------------------------  -->
 </head>
 <body>
-
+<#--  i OVAJ DEO OVDE TI JE ZA KALENDAR  -->
   <aside>
     <h1><a href="/technician">MedicalAssistant</a></h1>
     <div id="calendar"></div>
@@ -35,6 +30,7 @@
             <a href="/technician/all_patients">All patients</a>
             <a href="/technician/find_patient">Find patient</a>
             <a href="/technician/new_patient">New patient</a>
+            <a href="/technician/new_appointment">New appointment</a>
         </div>
     </div>
   </header>
@@ -50,7 +46,6 @@
               </td>
             </#list>
           </tr>
-        <label for="">datum</label>
       </table>
     </div>
   </div>
