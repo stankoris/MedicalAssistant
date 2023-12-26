@@ -1,25 +1,17 @@
 package com.MedicalAssistant.app;
 
-import com.MedicalAssistant.app.Database.DAO.AppointmentsDAO;
-import com.MedicalAssistant.app.Database.DAO.PatientDAO;
 import com.MedicalAssistant.app.Handlers.Appointment.NewAppointmentHandler;
 import com.MedicalAssistant.app.Handlers.Appointment.NewAppointmentSubmitHandler;
 import com.MedicalAssistant.app.Handlers.Doctor.DoctorAuthorizationHandler;
 import com.MedicalAssistant.app.Handlers.Doctor.DoctorDashboardHandler;
 import com.MedicalAssistant.app.Handlers.HomeHandler;
-import com.MedicalAssistant.app.Handlers.LoginFormHandler;
-import com.MedicalAssistant.app.Handlers.LoginSubmissionHandler;
+import com.MedicalAssistant.app.Handlers.Login.LoginFormHandler;
+import com.MedicalAssistant.app.Handlers.Login.LoginSubmissionHandler;
 import com.MedicalAssistant.app.Handlers.Patients.*;
 import com.MedicalAssistant.app.Handlers.Tehnician.TechnicianAuthorizationHandler;
 import com.MedicalAssistant.app.Handlers.Tehnician.TechnicianDashboardHandler;
-import com.MedicalAssistant.app.Models.Appointments;
-import com.MedicalAssistant.app.Models.Patient;
-import com.google.gson.Gson;
 import io.javalin.Javalin;
 import io.javalin.http.staticfiles.Location;
-
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 
 public class MedAssistApplication {
@@ -30,8 +22,10 @@ public class MedAssistApplication {
 		});
 
 		app.get("/", new HomeHandler());
-		app.get("/login", new LoginFormHandler());
+
 		app.post("/login", new LoginSubmissionHandler());
+		app.get("/login", new LoginFormHandler());
+
 
 		app.before("/doctor", new DoctorAuthorizationHandler());
 		app.before("/doctor/*", new DoctorAuthorizationHandler());

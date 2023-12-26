@@ -81,7 +81,7 @@
         </div>
 
         <div class="update_delete">
-            <div>
+            <div class="btn">
             <button>
             <a class="delete_patient_button" 
                 data-patient="${patient.first_name}"
@@ -94,6 +94,12 @@
             </div>
         </div>
     </form>
+
+
+        <div>
+            <button>Make appointment</button>
+        </div>
+
 
     <div id="patient_delete_modal">
         <p>Do you wish to delete <span id="span_firstname"></span> ?</p>

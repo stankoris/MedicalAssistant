@@ -1,4 +1,4 @@
-package com.MedicalAssistant.app.Handlers;
+package com.MedicalAssistant.app.Handlers.Login;
 
 import com.MedicalAssistant.app.Database.DAO.UserDAO;
 import com.MedicalAssistant.app.Exceptions.InvalidUsernamePasswordException;

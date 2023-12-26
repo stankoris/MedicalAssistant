@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<form action="/technician" method="post" enctype="multipart/form-data">
+<form action="" method="post" enctype="multipart/form-data">
 
-    <label for="patient_id">Insert patient id</label>
+    <label for="patient_id">Pick patient</label>
     <select id="patient_id" name="patient_id">
         <#list patients as patient>
             <option value="${patient.getPatient_id()}">
@@ -20,17 +20,8 @@
     </select>
     
 
-    <label for="doctor_id">Insert doctor id</label>
-    <select id="doctor_id" name="doctor_id">
-        <#list doctors as doctor>
-            <option value="${doctor.getDoctor_id()}">
-                ${doctor.full_name()}
-            </option>
-        </#list>
-    </select>
-    
-
-    <input type="datetime-local" name="date_time">
+    <input type="date" name="date">
+    <input type="time" name="time" step="3600" value="08:00">
 
     <button id="btn" type="submit">Press</button>
 
@@ -38,26 +29,14 @@
 
 <script>
 
-var patient_id = document.getElementById("patient_id");
-    var patient_id_input = document.getElementById("patient_id_input");
-
-    var doctor_id = document.getElementById("doctor_id");
-    var doctor_id_input = document.getElementById("doctor_id_input");
-
-    patient_id.addEventListener("change", function() {
-        patient_id_input.value = patient_id.value;
-    });
-
-    doctor_id.addEventListener("change", function() {
-        doctor_id_input.value = doctor_id.value;
-    });
+    let patient_id = document.getElementById("patient_id");
 
     document.getElementById("btn").addEventListener("click", function(event) {
         event.preventDefault(); 
-        var data = {
+        let data = {
             patient_id: patient_id.value,
-            doctor_id: doctor_id.value,
-            date_time: document.querySelector('input[type="datetime-local"]').value
+            date: document.querySelector('input[type="date"]').value,
+            time: document.querySelector('input[type="time"]').value,
         };
 
         fetch('/technician/new_appointment', {
@@ -69,10 +48,13 @@ var patient_id = document.getElementById("patient_id");
         })
         .then(response => response.json())
         .then(data => {
-           window.location.href = "/technician";
+            console.log("uspeh");
+           console.log(data.value);
         })
-        .catch((error) => {
-            window.location.href = "/technician";
+        .catch(error => {
+            console.log("neuspeh");
+            console.log(data.value);
+            console.log("Greska", error);
         });
     });
 

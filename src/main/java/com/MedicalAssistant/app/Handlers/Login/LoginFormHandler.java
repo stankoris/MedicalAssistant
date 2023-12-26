@@ -1,4 +1,4 @@
-package com.MedicalAssistant.app.Handlers;
+package com.MedicalAssistant.app.Handlers.Login;
 
 import com.MedicalAssistant.app.Templating.Renderer;
 import io.javalin.http.Context;

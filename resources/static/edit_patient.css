@@ -127,7 +127,6 @@ input {
 .update_delete {
   display: flex;
   justify-content: space-between;
-
 }
 
 .btn button {
@@ -139,6 +138,10 @@ input {
   cursor: pointer;
   width: 100%;
   border: 1px solid black;
+}
+.btn a {
+  text-decoration: none;
+  color: white;
 }
 
 button:hover {
