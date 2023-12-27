@@ -19,7 +19,7 @@
         </#list>
     </select>
     
-
+    
     <input type="date" name="date">
     <input type="time" name="time" step="3600" value="08:00">
 
@@ -48,11 +48,9 @@
         })
         .then(response => response.json())
         .then(data => {
-            console.log("uspeh");
            console.log(data.value);
         })
         .catch(error => {
-            console.log("neuspeh");
             console.log(data.value);
             console.log("Greska", error);
         });

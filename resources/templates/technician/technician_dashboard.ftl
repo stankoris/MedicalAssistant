@@ -36,26 +36,56 @@
 
     <div class="main_div_container">
     <div id="selectedDateInfo"></div>
-      <table>
-          <tr>
-            <#list appointments as appointment>
-              <td>
-                <button>${appointment.date}</button>
-              </td>
-            </#list>
-          </tr>
-      </table>
-      <button id="todayButton">Today date</button>
+      <table class="appointments-table">
+        <tr>
+          <td><button class="appointmentButton" id="07:00:00">07:00</button></td>
+        </tr>
+        <tr>
+          <td><button class="appointmentButton" id="08:00:00">08:00</button></td>
+        </tr>
+        <tr>
+          <td><button class="appointmentButton" id="09:00:00">09:00</button></td>
+        </tr>
+        <tr>
+          <td><button class="appointmentButton" id="10:00:00">10:00</button></td>
+        </tr>
+        <tr>
+          <td><button class="appointmentButton" id="11:00:00">11:00</button></td>
+        </tr>
+        <tr>
+          <td><button class="appointmentButton" id="12:00:00">12:00</button></td>
+        </tr>
+        <tr>
+          <td><button class="appointmentButton" id="13:00:00">13:00</button></td>
+        </tr>
+        <tr>
+          <td><button class="appointmentButton" id="14:00:00">14:00</button></td>
+        </tr>
+        <tr>
+          <td><button class="appointmentButton" id="15:00:00">15:00</button></td>
+        </tr>
+        <tr>
+          <td><button class="appointmentButton" id="16:00:00">16:00</button></td>
+        </tr>
+        <tr>
+          <td><button class="appointmentButton" id="17:00:00">17:00</button></td>
+        </tr>
+        <tr>
+          <td><button class="appointmentButton" id="18:00:00">18:00</button></td>
+        </tr>
+    </table>
     </div>
   </div>
 
-
+  <div class="todayButtonContainer">
+    <button id="todayButton">Today date</button>
+  </div>
+   
 
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>
-
     function getTodayDate() {
         var today = new Date();
         var year = today.getFullYear();
@@ -103,6 +133,14 @@
     function logout() {
       sessionStorage.clear();
       window.location.href = "/login";
+    }
+
+    const appointment_buttons = document.getElementsByClassName("appointmentButton");
+
+    for (let btn_appointment of appointment_buttons) {
+      btn_appointment.onclick = () => {
+        alert("desava se nesto")
+      }
     }
 
   </script>
